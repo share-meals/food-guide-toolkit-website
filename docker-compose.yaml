@@ -1,7 +1,7 @@
 version: "3"
 services:
   strapi:
-    container_name: strapi
+    container_name: ftw_strapi
     build:
       context: ./strapi
       dockerfile: ./Dockerfile
@@ -9,7 +9,7 @@ services:
     env_file: ./strapi/.env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_HOST: strapiDB
+      DATABASE_HOST: postgres
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PORT: ${DATABASE_PORT}
@@ -26,16 +26,15 @@ services:
     ports:
       - "1337:1337"
     networks:
-      - strapi
+      - ftw
     depends_on:
-      - strapiDB
+      - postgres
 
-  strapiDB:
+  postgres:
     image: postgres:12.0-alpine
-    container_name: strapiDB
+    container_name: ftw_postgres
     platform: linux/amd64 #for platform error on Apple M1 chips
     restart: unless-stopped
-    env_file: ./strapi/.env
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
@@ -46,23 +45,23 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - strapi
+      - ftw
   adminer:
     environment:
       ADMINER_DEFAULT_SERVER: postgres
-    container_name: fg_vms_adminer
+    container_name: ftw_adminer
     image: adminer
     restart: always
     depends_on:
-      - strapiDB
+      - postgres
     ports:
       - 8080:8080
     networks:
-      - strapi
-volumes:
-    strapi-data:
+      - ftw
+#volumes:
+#    strapi-data:
 
 networks:
-  strapi:
-    name: Strapi
+  ftw:
+    name: Food Guide Toolkit Website
     driver: bridge
