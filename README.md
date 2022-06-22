@@ -9,6 +9,10 @@ First, make sure you have all the `.env` files setup. There are examples availab
 2. `./strapi/.env.example`
 3. `./nextjs/.env.example`
 
+Second, run yarn in the strapi and nextjs directories.
+1. `cd strapi; yarn;`
+2. `cd nextjs; yarn;`
+
 ## Rapid Development
 
 To speed up development before deploying to production, we recommend running Strapi and NextJS in development mode. This avoids building (and having to rebuild) images, which can slow down coding.
