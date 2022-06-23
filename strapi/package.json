@@ -11,12 +11,14 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^1.1.0",
     "@strapi/plugin-graphql": "^4.2.0",
     "@strapi/plugin-i18n": "4.1.12",
     "@strapi/plugin-users-permissions": "4.1.12",
     "@strapi/strapi": "4.1.12",
     "better-sqlite3": "7.4.6",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "strapi-google-auth": "^0.1.2"
   },
   "author": {
     "name": "A Strapi developer"
