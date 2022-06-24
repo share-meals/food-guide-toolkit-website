@@ -1,17 +1,15 @@
-import '../styles/globals.css'
-import Header from '../components/Header';
 
-function MyApp({ Component, pageProps, pages}) {
+export default function Header({pages}){
+    console.log('this is the header');
+    console.log(pages);
     return(
 	<>
-	    <Header />
-	    <Component {...pageProps} />
+	    <h1>
+		this is the header
+	    </h1>
 	</>
     );
 }
-
-export default MyApp
-
 
 export async function getStaticProps() {
     const {data} = await client.query({
