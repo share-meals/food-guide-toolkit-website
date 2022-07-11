@@ -90,7 +90,6 @@ export async function getStaticProps() {
 	    }
 	`,
     });
-
     return {
 	props: {
             pages: data.pages.data
