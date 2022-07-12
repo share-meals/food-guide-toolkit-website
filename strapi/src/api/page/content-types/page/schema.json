@@ -31,7 +31,7 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo",
-      "private": true
+      "required": true
     },
     "body": {
       "type": "richtext"
