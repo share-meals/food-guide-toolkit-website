@@ -131,5 +131,6 @@ module.exports = () => {
                 }
             }
         }
+	seo: true
     }
 }
