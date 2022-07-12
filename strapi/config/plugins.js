@@ -1,5 +1,11 @@
-module.exports = () => {
-    return {
-        ckeditor: true
-    }
-}
+module.exports = ({ env }) => ({
+    
+    ckeditor: true,
+    seo: {
+      enabled: true,
+    },
+
+
+  });
+
+  
