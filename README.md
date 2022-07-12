@@ -13,6 +13,10 @@ Second, run yarn in the strapi and nextjs directories.
 1. `cd strapi; yarn;`
 2. `cd nextjs; yarn;`
 
+To run Strapi in detached mode, first make sure PM2 is installed on your system
+
+`yarn global add pm2`
+
 ## Rapid Development
 
 To speed up development before deploying to production, we recommend running Strapi and NextJS in development mode. This avoids building (and having to rebuild) images, which can slow down coding.
