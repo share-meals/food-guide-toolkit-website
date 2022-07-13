@@ -19,13 +19,4 @@ export async function getAllPageSlugs(){
 	`
     });
     return response.data.pages.data.map(page => page.attributes.slug);
-    /*
-    return pages.map((page) => {
-	return {
-	    params: {
-		slug: page
-	    }
-	};
-    });
-    */
 }

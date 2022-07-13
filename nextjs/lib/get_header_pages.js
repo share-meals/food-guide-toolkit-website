@@ -3,10 +3,10 @@ require('dotenv').config({
     path: path.resolve(__dirname, '../.env')
 });
 const ApolloClient = require('@apollo/client').ApolloClient;
+const fetch = require('cross-fetch/polyfill').fetch;
 const fs = require('fs');
 const gql = require('@apollo/client').gql;
 const InMemoryCache = require('@apollo/client').InMemoryCache;
-const fetch = require('cross-fetch/polyfill').fetch;
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),
@@ -15,6 +15,7 @@ const client = new ApolloClient({
 });
 
 async function get_header_links(){
+    // todo: modify GraphQL query to only take pages we want in our header
     const response = await client.query({
 	query: gql`
             query Pages {

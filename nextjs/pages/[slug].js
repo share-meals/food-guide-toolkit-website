@@ -1,14 +1,12 @@
-import {useRouter} from 'next/router';
-import {getAllPageSlugs} from '../lib/pages';
 import apollo from '../lib/apollo-client';
+import {getAllPageSlugs} from '../lib/pages';
 import {gql} from "@apollo/client";
+import {useRouter} from 'next/router';
 
 export default function Page({
     body,
     title
-}){
-    
-//    const router = useRouter();
+}){    
     return(
 	<div>
 	    <h1>{title}</h1>
