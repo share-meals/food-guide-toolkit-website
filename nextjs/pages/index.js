@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client";
-import client from "../lib/apollo-client";
+// import { gql } from "@apollo/client";
+// import client from "../lib/apollo-client";
 
 import Head from 'next/head'
 import Image from 'next/image'
