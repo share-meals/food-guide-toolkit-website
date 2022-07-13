@@ -8,7 +8,7 @@ export default function Page({
     title
 }){
     
-    const router = useRouter();
+//    const router = useRouter();
     return(
 	<div>
 	    <h1>{title}</h1>
@@ -18,7 +18,7 @@ export default function Page({
 }
 
 export async function getStaticPaths() {
-    const slugs = getAllPageSlugs();
+    //const slugs = getAllPageSlugs();
     return {
 	paths: [
 	    {
@@ -49,7 +49,10 @@ export async function getStaticProps({params}){
 	    }
 	`,
     });
+//    return {
+//	props: data.pages.data[0].attributes
+//    }
     return {
-	props: data.pages.data[0].attributes
+	props: {}
     }
 }
