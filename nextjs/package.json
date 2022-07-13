@@ -3,11 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-	"dev": "next dev",
+	"dev": "clear; next dev",
 	"develop": "yarn dev",
-	"build": "next build",
-	"start": "next start",
-	"lint": "next lint"
+	"build": "clear; next build",
+	"start": "clear; next start",
+	"lint": "clear; next lint"
     },
     "dependencies": {
 	"@apollo/client": "^3.6.8",
