@@ -81,6 +81,7 @@ export async function getStaticProps() {
 			id
 			attributes{
 			    body
+			    slug
 			    title
 			    }
 			}
@@ -88,7 +89,7 @@ export async function getStaticProps() {
 	    }
 	`,
     });
-    console.log(data.pages.data);
+    //console.log(data.pages.data);
     return {
 	props: {
             pages: data.pages.data

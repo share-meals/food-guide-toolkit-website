@@ -10,7 +10,7 @@ export async function getAllPageSlugs(){
 		    data{
 			id
 			attributes{
-			    title
+			    slug
 			    }
 			}
 		}
@@ -18,21 +18,8 @@ export async function getAllPageSlugs(){
 	    }
 	`
     });
-
-    console.log(response);
-    
+    return response.data.pages.data.map(page => page.attributes.slug);
     /*
-    return {
-	props: {
-            pages: data.pages.data
-	},
-    };
-    */
-    const pages = [
-	"home",
-	"about-us",
-	"contact-us"
-    ];
     return pages.map((page) => {
 	return {
 	    params: {
@@ -40,4 +27,5 @@ export async function getAllPageSlugs(){
 	    }
 	};
     });
+    */
 }

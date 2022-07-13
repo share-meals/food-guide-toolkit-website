@@ -18,15 +18,9 @@ export default function Page({
 }
 
 export async function getStaticPaths() {
-    //const slugs = getAllPageSlugs();
+    const slugs = await getAllPageSlugs();
     return {
-	paths: [
-	    {
-		params: {
-		    slug: 'contact-us'
-		}
-	    }
-	],
+	paths: slugs.map((slug) => {return {params: {slug}}}),
 	fallback: false
     }
 }
@@ -49,10 +43,7 @@ export async function getStaticProps({params}){
 	    }
 	`,
     });
-//    return {
-//	props: data.pages.data[0].attributes
-//    }
     return {
-	props: {}
+	props: data.pages.data[0].attributes
     }
 }
