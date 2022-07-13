@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "toolkit_pages",
+  "info": {
+    "singularName": "toolkit-page",
+    "pluralName": "toolkit-pages",
+    "displayName": "Toolkit Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
+    }
+  }
+}
