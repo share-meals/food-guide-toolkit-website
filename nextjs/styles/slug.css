@@ -1,0 +1,12 @@
+.App{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  
+  .title{
+    text-align: center;
+  }
+  
+  .updated-at{
+    text-align: right;
+  }

@@ -1,47 +1,78 @@
-import apollo from '../lib/apollo-client';
-import {getAllPageSlugs} from '../lib/pages';
-import {gql} from "@apollo/client";
-import {useRouter} from 'next/router';
+// import "../styles/slug.css";
+import apollo from "../lib/apollo-client";
+import { getAllPageSlugs } from "../lib/pages";
+import { gql } from "@apollo/client";
+import { useRouter } from "next/router";
+import Head from "next/head";
 
-export default function Page({
-    body,
-    title
-}){    
-    return(
-	<div>
-	    <h1>{title}</h1>
-	    <div>{body}</div>
-	</div>
-    )
+export default function Page({ body, title, description, updatedAt, url }) {
+  const router = useRouter();
+  return (
+    <div className="App">
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta
+          property="og:url"
+          content={`http://http://localhost:3000/${router.asPath}`}
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SMTK" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+      </Head>
+
+      <h1 className="title">{title}</h1>
+	  <img src={`http://localhost:1337/${url}`} width="100%" height="375"/>
+    <img src={`http://localhost:3000/${url}`} width="100%" height="375"/>
+	  <div className="updated-at">{updatedAt}</div>
+      <div>{body}</div>
+    </div>
+  );
 }
 
 export async function getStaticPaths() {
-    const slugs = await getAllPageSlugs();
-    return {
-	paths: slugs.map((slug) => {return {params: {slug}}}),
-	fallback: false
-    }
+  const slugs = await getAllPageSlugs();
+  return {
+    paths: slugs.map((slug) => {
+      return { params: { slug } };
+    }),
+    fallback: false,
+  };
 }
 
-export async function getStaticProps({params}){
-    // todo: replace with findOne logic
-    const {data} = await apollo.query({
-	query: gql`
+export async function getStaticProps({ params }) {
+  // todo: replace with findOne logic
+  const { data } = await apollo.query({
+    query: gql`
             query Pages {
 		pages (filters: {slug: {eq: "${params.slug}"}})
 		{
-		    data{
-			id
-			attributes{
-			    title
-			    body
-			}
-		    }
+		    data {
+				attributes {
+				  title
+				  hero_image {
+					data {
+						attributes {
+							url
+							caption
+						}
+					}
+				  }
+				  updatedAt
+				  body
+				  seo {
+					title
+					description
+				  }
+				}
+			  }
 		}
 	    }
 	`,
-    });
-    return {
-	props: data.pages.data[0].attributes
-    }
+  });
+  return {
+    props: data.pages.data[0].attributes,
+  };
 }
