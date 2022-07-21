@@ -5,8 +5,15 @@ import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-export default function Page({ body, title, description, updatedAt, url }) {
-  const router = useRouter();
+export default function Page({
+    body,
+    description,
+    hero_image: hero_image_raw,
+    title,
+    updatedAt,
+}) {
+    const router = useRouter();
+    const hero_image = hero_image_raw.data.attributes;
   return (
     <div className="App">
       <Head>
@@ -24,8 +31,7 @@ export default function Page({ body, title, description, updatedAt, url }) {
       </Head>
 
       <h1 className="title">{title}</h1>
-	  <img src={`http://localhost:1337/${url}`} width="100%" height="375"/>
-    <img src={`http://localhost:3000/${url}`} width="100%" height="375"/>
+	  <img src={`${process.env.STRAPI_URL}${hero_image.url}`} width="100%" height="375"/>
 	  <div className="updated-at">{updatedAt}</div>
       <div>{body}</div>
     </div>
@@ -33,7 +39,7 @@ export default function Page({ body, title, description, updatedAt, url }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getAllPageSlugs();
+    const slugs = await getAllPageSlugs();
   return {
     paths: slugs.map((slug) => {
       return { params: { slug } };
