@@ -1,6 +1,7 @@
-import apollo from '../lib/apollo-client';
-import {getAllPageSlugs} from '../lib/pages';
-import {gql} from "@apollo/client";
+import {
+    getPageBySlug,
+    getAllPageSlugs
+} from '../lib/pages';
 import {useRouter} from 'next/router';
 
 export default function Page({
@@ -24,24 +25,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}){
-    // todo: replace with findOne logic
-    const {data} = await apollo.query({
-	query: gql`
-            query Pages {
-		pages (filters: {slug: {eq: "${params.slug}"}})
-		{
-		    data{
-			id
-			attributes{
-			    title
-			    body
-			}
-		    }
-		}
-	    }
-	`,
-    });
     return {
-	props: data.pages.data[0].attributes
+	props: await getPageBySlug(params.slug)
     }
 }
