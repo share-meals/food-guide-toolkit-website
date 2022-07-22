@@ -4,6 +4,7 @@ import { getAllPageSlugs } from "../lib/pages";
 import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Moment from 'react-moment';
 
 export default function Page({
     body,
@@ -14,6 +15,8 @@ export default function Page({
 }) {
     const router = useRouter();
     const hero_image = hero_image_raw.data.attributes;
+    
+  // render()
   return (
     <div className="App">
       <Head>
@@ -32,7 +35,7 @@ export default function Page({
 
       <h1 className="title">{title}</h1>
 	  <img src={`${process.env.STRAPI_URL}${hero_image.url}`} width="100%" height="375"/>
-	  <div className="updated-at">{updatedAt}</div>
+	  <div className="updated-at"><Moment>{updatedAt}</Moment></div>
       <div>{body}</div>
     </div>
   );
