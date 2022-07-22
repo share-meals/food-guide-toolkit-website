@@ -35,7 +35,7 @@ export default function Page({
 
       <h1 className="title">{title}</h1>
 	  <img src={`${process.env.STRAPI_URL}${hero_image.url}`} width="100%" height="375"/>
-	  <div className="updated-at"><Moment>{updatedAt}</Moment></div>
+	  <div className="updated-at"><Moment format='dddd, MMMM DD YYYY'>{updatedAt}</Moment></div>
       <div>{body}</div>
     </div>
   );
