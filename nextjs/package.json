@@ -4,7 +4,7 @@
 			"private": true,
 			"scripts": {
 						"build": "clear; yarn get_header_pages; next build",
-						"dev": "clear; yarn get_header_pages; next dev",
+						"dev": " next dev",
 						"develop": "yarn dev",
 						"get_header_pages": "node lib/get_header_pages.js",
 						"lint": "clear; yarn get_header_pages; next lint",
@@ -15,7 +15,8 @@
 						"@emotion/react": "^11.9.3",
 						"@emotion/styled": "^11.9.3",
 						"@mui/icons-material": "^5.8.4",
-						"@mui/material": "^5.9.0",
+						"@mui/material": "^5.9.1",
+						"@mui/styles": "^5.9.1",
 						"cross-fetch": "^3.1.5",
 						"dotenv": "^16.0.1",
 						"graphql": "^16.5.0",

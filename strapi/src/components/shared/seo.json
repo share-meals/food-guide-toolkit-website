@@ -21,6 +21,12 @@
     "keywords": {
       "type": "string",
       "regex": "[^,]+"
+    },
+    "erase": {
+      "type": "email"
+    },
+    "delete": {
+      "type": "email"
     }
   }
 }
