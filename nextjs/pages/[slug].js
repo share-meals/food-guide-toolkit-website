@@ -24,8 +24,8 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({params}){
+export async function getStaticProps({params: {slug}}){
     return {
-	props: await getPageBySlug(params.slug)
+	props: await getPageBySlug({slug})
     }
 }

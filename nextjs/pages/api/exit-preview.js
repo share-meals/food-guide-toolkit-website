@@ -1,4 +1,5 @@
-export default function handler(req, res){
-    res.clearPreviewData();
-    res.status(200).end();
+export default function exit_preview(request, response){
+    response.clearPreviewData();
+    response.writeHead(307, {Location: '/'});
+    response.end();
 }
