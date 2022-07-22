@@ -3,13 +3,13 @@ import apollo from './apollo-client';
 
 export async function getPageBySlug({
     slug,
-    publication_state = 'live'
+    preview = false
 }){
     const {data: {pages: {data}}} = await apollo.query({
 	query: gql`
             query Pages {
 		pages (
-		    publicationState: ${publication_state.toUpperCase()}
+		    publicationState: ${preview ? 'PREVIEW' : 'LIVE'}
 		    filters: {slug: {eq: "${slug}"}}
 		)
 		{
@@ -25,8 +25,7 @@ export async function getPageBySlug({
 	    }
 	`
     });
-    console.log(data);
-    return data[0].attributes;
+    return data[0]?.attributes;
 }
 
 export async function getAllPageSlugs(){
