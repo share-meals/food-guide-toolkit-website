@@ -1,7 +1,10 @@
 import header_pages from '../lib/header_pages.json';
-import { AppBar, Toolbar, Typography, button } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { useRouter } from 'next/router';
 import * as React from 'react';
+
+// todo: replace hardcoded headersData with header_pages
+// note: header_pages is in the form of [ { __typename: 'Page', title: 'published', slug: 'published' } ]
 
 const headersData = [
   {
@@ -24,7 +27,7 @@ const headersData = [
 export default function Header() {
   const DisplayDesktop = () => {
   return (
-    <Toolbar>{ShareMealsLogo} {getMenuButtons}</Toolbar>
+    <Toolbar>{ShareMealsLogo} <MenuButtons /></Toolbar>
   )
   };
   const ShareMealsLogo =(
@@ -32,7 +35,8 @@ export default function Header() {
     </Typography>
   );
 
-  const getMenuButtons = () => {
+    const MenuButtons = () => {
+	// todo: maybe we don't even need component / useRouter? I think the href by itself will work
     return headersData.map(({ label, href }) => {
       return (
         <Button
@@ -40,7 +44,7 @@ export default function Header() {
             key: label,
             color: "inherit",
             to: href,
-            component: useRouter,
+            //component: useRouter,
           }}
         >
           {label}
