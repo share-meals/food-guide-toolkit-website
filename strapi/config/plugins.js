@@ -4,7 +4,7 @@ module.exports = () => {
             enable: true,
             config: {
                 editor: {
-                    removePlugins: ['Markdown'],
+                    removePlugins: [],
                     toolbar: {
                         items: [
                             'undo',

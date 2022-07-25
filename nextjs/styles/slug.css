@@ -10,3 +10,8 @@
   .updated-at{
     text-align: right;
   }
+
+  .hero-img{
+    opacity: 0.5;
+    object-fit: contain;
+  }
