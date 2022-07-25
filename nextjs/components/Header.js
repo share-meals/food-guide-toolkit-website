@@ -54,7 +54,9 @@ export default function Header() {
   };
     return (
       <header>
-        <AppBar><DisplayDesktop/></AppBar>
+          <AppBar position='sticky'>
+	      <DisplayDesktop/>
+	  </AppBar>
       </header>
     );
     
