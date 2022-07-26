@@ -1,6 +1,9 @@
 // import "../styles/slug.css";
+import {
+  getPageBySlug,
+  getAllPageSlugs
+} from '../lib/pages';
 import apollo from "../lib/apollo-client";
-import { getAllPageSlugs } from "../lib/pages";
 import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -13,6 +16,7 @@ export default function Page({
   hero_image: hero_image_raw,
   title,
   updatedAt,
+  preview
 }) {
   const router = useRouter();
   const hero_image = hero_image_raw.data.attributes;
@@ -33,6 +37,10 @@ export default function Page({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
       </Head>
+
+      {preview && <h1>
+		this is a preview
+	    </h1>}
 
       <h1 className="title">{title}</h1>
       <img
@@ -61,37 +69,16 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  // todo: replace with findOne logic
-  const { data } = await apollo.query({
-    query: gql`
-            query Pages {
-		pages (filters: {slug: {eq: "${params.slug}"}})
-		{
-		    data {
-				attributes {
-				  title
-				  hero_image {
-					data {
-						attributes {
-							url
-							caption
-						}
-					}
-				  }
-				  updatedAt
-				  body
-				  seo {
-					title
-					description
-				  }
-				}
-			  }
-		}
-	    }
-	`,
-  });
-  return {
-    props: data.pages.data[0].attributes,
-  };
+export async function getStaticProps({params: {slug}, preview}){
+    const data = await getPageBySlug({slug, preview});
+    if(!data){
+	// todo: 404 page? redirect with alert?
+    }
+    // implied else
+    return {
+	props: {
+	    preview,
+	    ...data
+	}
+    }
 }
