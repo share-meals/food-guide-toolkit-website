@@ -2,6 +2,7 @@ import {
     getPageBySlug,
     getAllPageSlugs
 } from '../lib/pages';
+import PreviewAlert from '@components/PreviewAlert';
 import {useRouter} from 'next/router';
 
 export default function Page({
@@ -11,9 +12,7 @@ export default function Page({
 }){    
     return(
 	<div>
-	    {preview && <h1>
-		this is a preview
-	    </h1>}
+	    {preview && <PreviewAlert />}
 	    <h1>{title}</h1>
 	    <div>{body}</div>
 	</div>
@@ -36,7 +35,7 @@ export async function getStaticProps({params: {slug}, preview}){
     // implied else
     return {
 	props: {
-	    preview,
+	    preview: preview || false,
 	    ...data
 	}
     }
