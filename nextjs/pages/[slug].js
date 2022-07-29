@@ -19,7 +19,7 @@ export default function Page({
   preview
 }) {
   const router = useRouter();
-  const hero_image = hero_image_raw.data.attributes;
+  const hero_image = hero_image_raw?.data.attributes;
 
   // render()
   return (
@@ -29,7 +29,7 @@ export default function Page({
         <meta name="description" content={description} />
         <meta
           property="og:url"
-          content={`http://http://localhost:3000/${router.asPath}`}
+          content={`http://localhost:3000/${router.asPath}`}
         />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
@@ -45,7 +45,7 @@ export default function Page({
       <h1 className="title">{title}</h1>
       <img
         className="hero-img"
-        src={`${process.env.STRAPI_URL}${hero_image.url}`}
+        src={`${process.env.STRAPI_URL}${hero_image?.url}`}
         width="100%"
         height="375"
       />
