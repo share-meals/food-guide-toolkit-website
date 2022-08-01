@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Moment from "react-moment";
 import ReactMarkdown from "react-markdown";
+import PreviewAlert from '@components/PreviewAlert';
 
 export default function Page({
   body,
@@ -38,9 +39,7 @@ export default function Page({
         <meta property="og:description" content={description} />
       </Head>
 
-      {preview && <h1>
-		this is a preview
-	    </h1>}
+      {preview && <PreviewAlert />}
 
       <h1 className="title">{title}</h1>
       <img
@@ -57,7 +56,6 @@ export default function Page({
       </div>
     </div>
   );
-}
 
 export async function getStaticPaths() {
   const slugs = await getAllPageSlugs();
@@ -77,7 +75,7 @@ export async function getStaticProps({params: {slug}, preview}){
     // implied else
     return {
 	props: {
-	    preview,
+	    preview: preview || false,
 	    ...data
 	}
     }
