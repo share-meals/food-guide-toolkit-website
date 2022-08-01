@@ -31,6 +31,7 @@ export async function getPageBySlug({
 				  title
 				  description
 				}
+			    slug
 			  }
 			}
 		    }
