@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import PreviewAlert from "@components/PreviewAlert";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import {useTheme} from '@mui/material/styles';
 
 export default function Page({
   body,
@@ -17,6 +18,7 @@ export default function Page({
   updatedAt,
   preview,
 }) {
+    const theme = useTheme();
   const router = useRouter();
   const hero_image = hero_image_raw?.data?.attributes;
 
@@ -52,10 +54,9 @@ export default function Page({
           variant="caption"
           component="div"
           className="updated-at"
-          style={{ color: "#686868", textAlign: "right" }}
+          style={{ color: theme.palette.tertiary.main, textAlign: "right" }}
         >
-          Last updated:
-          <Moment format="dddd, MMMM DD YYYY">{updatedAt}</Moment>
+          Last updated: <Moment format="dddd, MMMM D, YYYY">{updatedAt}</Moment>
         </Typography>
 
         <Typography variant="h1">{title}</Typography>
