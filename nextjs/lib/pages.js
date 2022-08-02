@@ -15,14 +15,27 @@ export async function getPageBySlug({
 		{
 		    data{
 			id
-			attributes{
-			    body
+			attributes {
+				title
+				hero_image {
+				  data {
+					  attributes {
+						  url
+						  caption
+					  }
+				  }
+				}
+				updatedAt
+				body
+				seo {
+				  title
+				  description
+				}
 			    slug
-			    title
+			  }
 			}
 		    }
 		}
-	    }
 	`
     });
     return data[0]?.attributes;
