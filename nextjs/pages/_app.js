@@ -12,6 +12,14 @@ const theme = createTheme({
 	// todo: consider repurposing one of the grey values instead
 	tertiary: {
 	    main: '#686868'
+	},
+	google: {
+	    main: '#b7455d',
+	    contrastText: '#ffffff'
+	},
+	linkedin: {
+	    main: '#0e6bb8',
+	    contrastText: '#ffffff'
 	}
     }
 });
