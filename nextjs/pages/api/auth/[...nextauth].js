@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
+import LinkedInProvider from "next-auth/providers/linkedin";
 //import EmailProvider from 'next-auth/providers/email';
 
 export default NextAuth({
@@ -11,7 +12,11 @@ export default NextAuth({
 	GoogleProvider({
 	    clientId: process.env.GOOGLE_CLIENT_ID,
 	    clientSecret: process.env.GOOGLE_CLIENT_SECRET
-	})
+	}),
+	LinkedInProvider({
+	    clientId: process.env.LINKEDIN_CLIENT_ID,
+	    clientSecret: process.env.LINKEDIN_CLIENT_SECRET
+	}),
 	/*
 	EmailProvider({
 	    server: {
@@ -23,7 +28,7 @@ export default NextAuth({
 		}
 	    },
 	    from: process.env.EMAIL_FROM
-	}),
+	})
 	*/
     ]
 });
