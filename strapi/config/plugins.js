@@ -4,7 +4,7 @@ module.exports = () => {
             enable: true,
             config: {
                 editor: {
-                    removePlugins: ['Markdown'],
+                    removePlugins: [],
                     toolbar: {
                         items: [
                             'undo',
@@ -131,6 +131,17 @@ module.exports = () => {
                 }
             }
         },
-	seo: true
+	'preview-button': {
+	    enabled: true,
+	    config: {
+		contentTypes: [
+		    {
+			uid: 'api::page.page',
+			targetField: 'slug',
+		    }
+		],
+	    },
+	},
+	seo: true,
     }
 }
