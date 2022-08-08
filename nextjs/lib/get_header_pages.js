@@ -32,7 +32,7 @@ async function get_header_links(){
 	    }
 	`
     });
-    const header_pages = response.data.pages.data.map(page => page.attributes);
+    const header_pages = response ? response.data.pages.data.map(page => page.attributes) : [];
     fs.writeFileSync(
 	path.resolve(__dirname, 'header_pages.json'),
 	JSON.stringify(header_pages)
