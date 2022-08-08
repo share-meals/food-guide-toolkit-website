@@ -36,12 +36,13 @@ export default function Home() {
           		<Item style={{
 				display: 'flex-end',
 				
-        		borderBottomLeftRadius: 225,
-				borderTopLeftRadius: 225,
+        		borderBottomLeftRadius: '1rem',
+				borderTopLeftRadius: '1rem',
+				paddingLeft: '1rem'
 				
       			}}>
-					<a href="https://sharemeals.org/"><img src='https://img.freepik.com/free-vector/tiny-people-standing-near-box-donation-food-delivery-volunteers-giving-healthy-grocery-goods-charity-flat-vector-illustration-social-support-humanitarian-help-community-sharing-concept_74855-21023.jpg' alt='jpg' 
-					></img></a>
+					<a href="https://sharemeals.org/"><img src='https://img.freepik.com/free-vector/tiny-people-standing-near-box-donation-food-delivery-volunteers-giving-healthy-grocery-goods-charity-flat-vector-illustration-social-support-humanitarian-help-community-sharing-concept_74855-21023.jpg' alt='jpg' class='responsive'
+					/></a>
 				</Item>
         	</Grid>
 				<div className={styles.container} 
