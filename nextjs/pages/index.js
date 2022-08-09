@@ -18,11 +18,11 @@ import Step4Img from "../images/undraw_check_boxes_re_v40f.svg";
 import Step5Img from "../images/Completed-steps-pana.svg";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "right",
-  color: theme.palette.text.secondary,
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "right",
+    color: theme.palette.text.secondary,
 }));
 
 export default function Home() {
