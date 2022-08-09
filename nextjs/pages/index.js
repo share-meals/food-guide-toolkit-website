@@ -6,10 +6,16 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { Button, Typography, CardActionArea } from "@mui/material";
+import { Button, Typography, CardActionArea, Stack } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import DonateImg from "../images/Donate-Img.png";
+import Step1Img from "../images/Thinking-face-pana.svg";
+import Step2Img from "../images/undraw_profile_pic_ic-5-t.svg";
+import Step3Img from "../images/Customer-Survey-amico.svg";
+import Step4Img from "../images/undraw_check_boxes_re_v40f.svg";
+import Step5Img from "../images/Completed-steps-pana.svg";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -20,6 +26,38 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Home() {
+  const step_card_info = [
+    {
+      image: Step1Img,
+      alt: "",
+      step: "STEP 1",
+      description: "Choose to adopt our program",
+    },
+    {
+      image: Step2Img,
+      alt: "",
+      step: "STEP 2",
+      description: "Create an account",
+    },
+    {
+      image: Step3Img,
+      alt: "",
+      step: "STEP 3",
+      description: "Take our survey",
+    },
+    {
+      image: Step4Img,
+      alt: "",
+      step: "STEP 4",
+      description: "Get personalised checklist",
+    },
+    {
+      image: Step5Img,
+      alt: "",
+      step: "STEP 5",
+      description: "Track your progress",
+    },
+  ];
   return (
     // <Box sx={{ display: 'flex-end',
     // 		   backgroundColor: '#126435' }}>
@@ -68,13 +106,7 @@ export default function Home() {
     // 	</Grid>
     // </Box>
     <div>
-      <div
-        style={{
-          display: "flex",
-          backgroundColor: "#126435",
-          height: "85vh",
-          paddingTop: "5rem",
-        }}
+      <Stack direction="row" backgroundColor="#126435" height="85vh" paddingTop="5rem"
       >
         <div style={{ width: "50%", padding: "5rem", color: "white" }}>
           <Typography variant="h3">
@@ -99,15 +131,15 @@ export default function Home() {
         <div
           style={{
             width: "50%",
-            height: "70%",
-            backgroundColor: "white",
-            borderBottomLeftRadius: 225,
-            borderTopLeftRadius: 225,
+            // height: "70%",
+            // backgroundColor: "white",
+            // borderBottomLeftRadius: 225,
+            // borderTopLeftRadius: 225,
           }}
         >
-          {/* <img  width="600" src='https://img.freepik.com/free-vector/tiny-volunteers-sharing-canned-food-grocery-products-help-support-assistance-from-people-with-charity-cardboard-box-flat-vector-illustration-voluntary-delivery-humanitarian-aid-concept_74855-22077.jpg?w=1800&t=st=1659939326~exp=1659939926~hmac=bb1064f1ba9ef17aa2b1e319b33a0dc83ed7746a62d3dd85edf1ae046bb34099'></img> */}
+          <img width="600" src={DonateImg}></img>
         </div>
-      </div>
+      </Stack>
 
       <div style={{ height: "60vh" }}></div>
       <div style={{ height: "70vh", backgroundColor: "#CBDDD3" }}>
@@ -117,107 +149,35 @@ export default function Home() {
         >
           How does it work?
         </Typography>
-		<div style={{display: "flex", justifyContent: "space-around", margin: "4rem 5rem 0 5rem",}}>
-		<Card sx={{ width: 215, borderRadius: 5}}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="200"
-              width="50"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Step
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                blah blah blah
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-		<Card sx={{ width: 215, borderRadius: 5}}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="200"
-              width="50"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Step
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                blah blah blah
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-		<Card sx={{ width: 215, borderRadius: 5}}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="200"
-              width="50"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Step
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                blah blah blah
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-		<Card sx={{ width: 215, borderRadius: 5}}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="200"
-              width="50"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Step
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                blah blah blah
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-		<Card sx={{ width: 215, borderRadius: 5}}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="200"
-              width="50"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Step
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                blah blah blah
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-		</div>
+        <Stack
+          direction="row"
+          justifyContent="space-around"
+          alignItems="baseline"
+          spacing={2}
+          margin="4rem 5rem 0 5rem"
+        >
+          {step_card_info.map((info) => {
+            return (
+              <Card sx={{ width: 215, height: 315, borderRadius: 5 }}>
+                <Item>
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    width="50"
+                    image={info.image}
+                    alt={info.alt}
+                  />
+                  <CardContent sx={{ color: "black", textAlign: "left" }}>
+                    <Typography gutterBottom variant="h6">
+                      {info.step}
+                    </Typography>
+                    <Typography variant="body2">{info.description}</Typography>
+                  </CardContent>
+                </Item>
+              </Card>
+            );
+          })}
+        </Stack>
       </div>
     </div>
   );
