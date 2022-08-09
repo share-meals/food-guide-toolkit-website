@@ -137,7 +137,7 @@ export default function Home() {
             // borderTopLeftRadius: 225,
           }}
         >
-          <img width="600" src={DonateImg}></img>
+          <img width="600" src={DonateImg.src}></img>
         </div>
       </Stack>
 
@@ -164,7 +164,7 @@ export default function Home() {
                     component="img"
                     height="200"
                     width="50"
-                    image={info.image}
+                    image={info.image.src}
                     alt={info.alt}
                   />
                   <CardContent sx={{ color: "black", textAlign: "left" }}>
