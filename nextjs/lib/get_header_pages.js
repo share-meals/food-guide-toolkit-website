@@ -11,7 +11,7 @@ const InMemoryCache = require('@apollo/client').InMemoryCache;
 const client = new ApolloClient({
     cache: new InMemoryCache(),
     fetch,
-    uri: process.env.GRAPHQL_URL
+    uri: `${process.env.STRAPI_URL}/graphql`
 });
 
 async function get_header_links(){
