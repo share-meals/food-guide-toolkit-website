@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Header from '../components/Header';
+
 import {
     createTheme,
     ThemeProvider
@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }) {
   return(
       <>
 	  <ThemeProvider theme={theme}>
-	      <Header />
 	      <Component {...pageProps} />
 	  </ThemeProvider>
     </>
