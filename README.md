@@ -25,6 +25,8 @@ To speed up development before deploying to production, we recommend running Str
 2. Launch Strapi: `cd strapi; yarn develop`
 3. Launch NextJS: `cd nextjs; yarn develop`
 
+## Removing Editable Slug Field
+
 To deactivate the SEO slug generator in Strapi
 1. Go into `Content-Type Builder`.
 2. Choose which COLLECTION TYPE you would like to edit.
