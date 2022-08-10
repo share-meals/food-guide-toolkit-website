@@ -6,33 +6,17 @@ import * as React from "react";
 // todo: replace hardcoded headersData with header_pages
 // note: header_pages is in the form of [ { __typename: 'Page', title: 'published', slug: 'published' } ]
 
-// const headersData = [
-//   {
-//     label: "Home",
-//     heref: "/Home",
-//   },
-//   {
-//     label: "Toolkit",
-//     heref: "/Toolkit",
-//   },
-//   {
-//     label: "About",
-//     heref: "/About",
-//   },
-//   {
-//     label: "Donate",
-//     heref: "/Donate",
-//   },
-// ];
+
 export default function Header() {
   const theme = useTheme();
   const primary_color = theme.palette.primary.main;
   const DisplayDesktop = () => {
     return (
       <Toolbar>
-        <Stack direction='row' spacing={2}>
+        <Stack direction='row' spacing={1.5}>
         {ShareMealsLogo}
         <MenuButtons />
+        
         </Stack>
         <Stack direction='row' spacing={1} sx={{marginLeft: 'auto'}}>
         <Button variant="outlined" color="inherit">
