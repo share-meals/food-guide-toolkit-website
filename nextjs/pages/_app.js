@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import {GoogleAnalytics} from 'nextjs-google-analytics';
 import Header from '../components/Header';
 import {
     createTheme,
@@ -18,10 +19,11 @@ function MyApp({ Component, pageProps }) {
   return(
       <>
 	  <ThemeProvider theme={theme}>
+	      <GoogleAnalytics />
 	      <Header />
 	      <Component {...pageProps} />
 	  </ThemeProvider>
-    </>
+      </>
   );
 }
 

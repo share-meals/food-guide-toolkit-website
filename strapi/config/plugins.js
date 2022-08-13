@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = ({env}) => {
     return {
         ckeditor: {
             enable: true,
@@ -131,6 +131,23 @@ module.exports = () => {
                 }
             }
         },
+	email: {
+	    config: {
+		provider: 'nodemailer',
+		providerOptions: {
+		    host: env('SMTP_HOST'),
+		    port: env('SMTP_PORT'),
+		    auth: {
+			user: env('SMTP_USERNAME'),
+			pass: env('SMTP_PASSWORD')
+		    }
+		},
+		settings: {
+		    defaultFrom: env('SMTP_USERNAME'),
+		    defaultReplyTo: env('SMTP_USERNAME')
+		}
+	    }
+	},
 	'preview-button': {
 	    enabled: true,
 	    config: {
@@ -142,6 +159,6 @@ module.exports = () => {
 		],
 	    },
 	},
-	seo: true,
+	seo: true
     }
 }

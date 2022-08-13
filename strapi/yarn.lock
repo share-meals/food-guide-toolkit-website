@@ -1039,7 +1039,7 @@
   integrity sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==
   dependencies:
     regenerator-runtime "^0.13.4"
-
+    
 "@babel/template@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.16.7.tgz#8d126c8701fde4d66b264b3eba3d96f07666d155"
@@ -2049,6 +2049,14 @@
     redux-saga "^0.16.0"
     request "^2.83.0"
     url-join "4.0.1"
+
+"@strapi/provider-email-nodemailer@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-nodemailer/-/provider-email-nodemailer-4.2.3.tgz#d7c21460a5563e8deb79d8f2bda2a743cddf88e4"
+  integrity sha512-krJ4I5pYM6Zose0Cw0O+tD/jMKzgrRHYiowvTdbOQutrqIznb/NBoREFFgrX7s33ykXKUdXODICE7/hHB8f3Zg==
+  dependencies:
+    lodash "4.17.21"
+    nodemailer "6.7.3"
 
 "@strapi/provider-email-sendmail@4.1.12":
   version "4.1.12"
@@ -8166,6 +8174,11 @@ nodemailer-shared@1.1.0:
   dependencies:
     nodemailer-fetch "1.6.0"
 
+nodemailer@6.7.3:
+  version "6.7.3"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.3.tgz#b73f9a81b9c8fa8acb4ea14b608f5e725ea8e018"
+  integrity sha512-KUdDsspqx89sD4UUyUKzdlUOper3hRkDVkrKh/89G+d9WKsU5ox51NWS4tB1XR5dPUdR4SP0E3molyEfOvSa3g==
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
@@ -10316,7 +10329,6 @@ strapi-plugin-preview-button@^0.3.4:
     react-intl "^5.24.6"
     react-redux "^7.2.6"
     react-router-dom "^6.2.1"
-
 stream-browserify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-3.0.0.tgz#22b0a2850cdf6503e73085da1fc7b7d0c2122f2f"
