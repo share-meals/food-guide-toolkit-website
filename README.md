@@ -52,3 +52,5 @@ There are 2 Collection Types:
 
 1. **Page** - These are public pages that are viewable by everyone through NextJS
 2. **Toolkit Page** - These are only available to users after they have created an account through NextJS. This will let users keep track of their progress implementing the Toolkit.
+
+You also want to set the proper access permissions. In your Strapi Dashboard, navigate to `Settings -> Roles -> Public` and allow `find` and `findOne` on `Page`. Assuming you are running this on localhost, you can navigate to `http://localhost:1337/admin/settings/users-permissions/roles/2`
